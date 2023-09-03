@@ -15,8 +15,18 @@ import Button11 from "../../components/Buttons/Button11"
 import Button12 from "../../components/Buttons/Button12"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import knock from "../../assets/imgs/knocking.png"
 
 export default function ClockPage() {
+    function fday(){
+        switch(day){
+            case 'day5':
+                return knock;
+            default:
+                return "";
+    }
+        
+    }
     const navigate = useNavigate()
     const [day, setDay] = useState("")
     const [start, setStart] = useState(false)
@@ -31,27 +41,29 @@ export default function ClockPage() {
         <PageContainer>
             <Logo/>
             <ButtonsContainer start={start}>
-                <MainButton onClick={()=> mainButton()}>{day}</MainButton>
-                <Button1 setDay={setDay}></Button1>
-                <Button2 setDay={setDay}></Button2>
-                <Button3 setDay={setDay}></Button3>
-                <Button4 setDay={setDay}></Button4>
-                <Button5 setDay={setDay}></Button5>
-                <Button6 setDay={setDay}></Button6>
-                <Button7 setDay={setDay}></Button7>
-                <Button8 setDay={setDay}></Button8>
-                <Button9 setDay={setDay}></Button9>
-                <Button10 setDay={setDay}></Button10>
-                <Button11 setDay={setDay}></Button11>
-                <Button12 setDay={setDay}></Button12>
+                <MainButton start={start} onClick={()=> mainButton()}>
+                    {day && <img src={fday()}></img>}
+                    </MainButton>
+                <Button1 start={start} setDay={setDay}></Button1>
+                <Button2 start={start} setDay={setDay}></Button2>
+                <Button3 start={start} setDay={setDay}></Button3>
+                <Button4 start={start} setDay={setDay}></Button4>
+                <Button5 start={start} setDay={setDay}></Button5>
+                <Button6 start={start} setDay={setDay}></Button6>
+                <Button7 start={start} setDay={setDay}></Button7>
+                <Button8 start={start} setDay={setDay}></Button8>
+                <Button9 start={start} setDay={setDay}></Button9>
+                <Button10 start={start} setDay={setDay}></Button10>
+                <Button11 start={start} setDay={setDay}></Button11>
+                <Button12 start={start} setDay={setDay}></Button12>
             </ButtonsContainer>     
         </PageContainer>
     )
 }
 
 const MainButton = styled.button`
-    height: 10rem;
-    width: 10rem;
+    height: ${props => !props.start ? "8rem" : "10rem"};
+    width: ${props => !props.start ? "8rem" : "10rem"};
     border-radius: 50%;
     border: solid black 1px;
     z-index: 2;
@@ -59,16 +71,13 @@ const MainButton = styled.button`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); 
+    transition: all 1s;
 `
 const ButtonsContainer = styled.div`
 min-height: 15rem;
 min-width: 15rem;
     position: relative;
-    button{
-        position: absolute;
-        top: ${props => !props.start && "50%"};
-        left: ${props => !props.start && "50%"};
-        transform: ${props => !props.start && "translate(-50%, -50%)"}; 
-
+    img{
+        max-height: 70%;
     }
 `

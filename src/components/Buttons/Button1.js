@@ -1,8 +1,8 @@
 import styled from "styled-components"
 
-export default function Button1({setDay}){
+export default function Button1({setDay, start}){
     return(
-        <Button1Style disabled onClick={()=>setDay("day1")}></Button1Style>
+        <Button1Style start={start} disabled onClick={()=>setDay("day1")}></Button1Style>
     )
 }
 
@@ -12,12 +12,12 @@ const Button1Style = styled.button`
     border-radius: 50%;
     border: solid black 1px;
     position: absolute;
-    top: 16.6%;
-    right: 16.6%;
-    transform: translate(0, -70%);
+    top: ${props => !props.start ? "50%" : "16.6%"};
+        right: ${props => !props.start ? "50%" : "16.6%"};
+        transform: ${props => !props.start ? "translate(50%, -50%)" : "translate(0, -70%)"};
     background-color: aliceblue;
     &:disabled{
 	background-color: gray;
-    transition: all 1s;
+    transition: all 1s linear;
 }
 `

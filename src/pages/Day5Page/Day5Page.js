@@ -1,12 +1,22 @@
 import { PageContainer } from "../../assets/styles/pageStyle";
 import Logo from "../../components/Logo";
+import { useState } from "react";
+import Test from "../../components/Pdfa";
+import darlo from "../../assets/pdfs/Darlo.pdf"
+import { DownloadButton } from "../../components/DownloadButton";
 
 export default function Day5Page(){
+    const [pdf, setPdf] = useState(false)
+    function sim(){
+        setPdf(!pdf)
+    }
     return(
         <PageContainer>
             <Logo></Logo>
-            <div>batata</div>
-            <iframe src="https://github.com/matt1n/T23_Collection_Front/blob/9ba8a35aebb08e5076a10f016bf69883d11cd56f/src/assets/pdfs/Darlo%20'Agulha'%20Poppion.pdf"></iframe>
+            <Test url={darlo}/>
+            {pdf && <iframe style={{display: "none"}} src={`${process.env.REACT_APP_BACK_END_URL}/downloads/day5`}></iframe>}
+            <DownloadButton sim={()=> sim()}></DownloadButton>
         </PageContainer>
     )
 }
+
