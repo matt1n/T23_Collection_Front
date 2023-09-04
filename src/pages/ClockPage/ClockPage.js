@@ -44,7 +44,7 @@ export default function ClockPage() {
             <ButtonsContainer start={start}>
                 <MainButton color={color} start={start} onClick={()=> mainButton()}>
                     {day && <img src={fday()}></img>}
-                    {!start && "Aperte para começar"}
+                    //{!start && "Aperte para começar"}
                     </MainButton>
                 <Button1 start={start} setDay={setDay}></Button1>
                 <Button2 start={start} setDay={setDay}></Button2>
