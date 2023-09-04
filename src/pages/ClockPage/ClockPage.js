@@ -44,6 +44,7 @@ export default function ClockPage() {
             <ButtonsContainer start={start}>
                 <MainButton color={color} start={start} onClick={()=> mainButton()}>
                     {day && <img src={fday()}></img>}
+                    {!start && "Aperte para começar"}
                     </MainButton>
                 <Button1 start={start} setDay={setDay}></Button1>
                 <Button2 start={start} setDay={setDay}></Button2>
@@ -74,6 +75,8 @@ const MainButton = styled.button`
     transform: translate(-50%, -50%); 
     transition: all 1s;
     background-color: ${props=> props.color ? props.color : "#fff"};
+    font-weight: 700;
+    padding: 0 20px;
 `
 const ButtonsContainer = styled.div`
 min-height: 15rem;
