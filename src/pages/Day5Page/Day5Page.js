@@ -2,7 +2,7 @@ import { PageContainer } from "../../assets/styles/pageStyle";
 import Logo from "../../components/Logo";
 import { useState } from "react";
 import Test from "../../components/Pdfa";
-import darlo from "../../assets/pdfs/Darlo.pdf"
+import protocolo from "../../assets/pdfs/Protocolo29-08.pdf"
 import { DownloadButton } from "../../components/DownloadButton";
 import EditorComment from "../../components/EditorComment";
 import CommentBlock from "../../components/CommentBlock";
@@ -16,7 +16,7 @@ export default function Day5Page(){
     return(
         <PageContainer>
             <Logo></Logo>
-            <Test url={darlo}/>
+            <Test url={protocolo}/>
             {pdf && <iframe style={{display: "none"}} src={`${process.env.REACT_APP_BACK_END_URL}/downloads/day5`}></iframe>}
             <DownloadButton sim={()=> sim()}></DownloadButton>
             <EditorComment comment={comment} setComment={setComment}></EditorComment>
