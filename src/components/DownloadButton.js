@@ -7,7 +7,7 @@ export function DownloadButton({sim}){
 }
 
 const DButton = styled.button`
-width: 250px;
+width: 240px;
 margin-bottom: 40px;
 border: 1px solid #000;
 background-color: #84cf3e;

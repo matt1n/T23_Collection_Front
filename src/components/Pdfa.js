@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Document, Page,pdfjs } from 'react-pdf';
 import { styled } from 'styled-components';
+import {FaAngleDoubleLeft, FaAngleDoubleRight} from 'react-icons/fa'
   
   
 export default function Test(url) {
@@ -43,9 +44,6 @@ export default function Test(url) {
         <Page pageNumber={pageNumber} renderAnnotationLayer={false} renderTextLayer={false} scale={1}/>
       </Document>
       <div className='sim'>
-        <div className="pagec">
-          Page {pageNumber || (numPages ? 1 : '--')} of {numPages || '--'}
-        </div>
         <div className="buttonc">
         <button
           type="button"
@@ -54,15 +52,18 @@ export default function Test(url) {
           className="Pre"
             
         >
-          Previous
+          <FaAngleDoubleLeft/>
         </button>
+        <div className="pagec">
+          Page {pageNumber || (numPages ? 1 : '--')} of {numPages || '--'}
+        </div>
         <button
           type="button"
           disabled={pageNumber >= numPages}
           onClick={nextPage}
            
         >
-          Next
+          <FaAngleDoubleRight/>
         </button>
         </div>
       </div>
@@ -85,8 +86,24 @@ border: solid 1px black;
     border: solid 1px black;
     border-bottom: none;
     color: #fff;
+    font-family: sans-serif;
   }
   .pagec{
-    margin-bottom: 2px;
+    margin: 2px 10px;
+  }
+  .buttonc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button{
+      margin-top: 5px;
+      background-color: transparent;
+      border: none;
+      font-size: 25px;
+      color: #fff;
+      &:disabled{
+        color: gray;
+      }
+    }
   }
 `
