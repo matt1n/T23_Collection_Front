@@ -30,6 +30,7 @@ export default function ClockPage() {
     const navigate = useNavigate()
     const [day, setDay] = useState("")
     const [start, setStart] = useState(false)
+    const [color, setColor] = useState("")
     function mainButton(){
         if (!start) {
             setStart(true)
@@ -41,14 +42,14 @@ export default function ClockPage() {
         <PageContainer>
             <Logo/>
             <ButtonsContainer start={start}>
-                <MainButton start={start} onClick={()=> mainButton()}>
+                <MainButton color={color} start={start} onClick={()=> mainButton()}>
                     {day && <img src={fday()}></img>}
                     </MainButton>
                 <Button1 start={start} setDay={setDay}></Button1>
                 <Button2 start={start} setDay={setDay}></Button2>
                 <Button3 start={start} setDay={setDay}></Button3>
                 <Button4 start={start} setDay={setDay}></Button4>
-                <Button5 start={start} setDay={setDay}></Button5>
+                <Button5 setColor={setColor} start={start} setDay={setDay}></Button5>
                 <Button6 start={start} setDay={setDay}></Button6>
                 <Button7 start={start} setDay={setDay}></Button7>
                 <Button8 start={start} setDay={setDay}></Button8>
@@ -72,6 +73,7 @@ const MainButton = styled.button`
     left: 50%;
     transform: translate(-50%, -50%); 
     transition: all 1s;
+    background-color: ${props=> props.color ? props.color : "#fff"};
 `
 const ButtonsContainer = styled.div`
 min-height: 15rem;

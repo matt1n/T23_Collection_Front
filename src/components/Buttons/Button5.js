@@ -1,8 +1,12 @@
 import styled from "styled-components"
 
-export default function Button5({setDay, start}){
+export default function Button5({setDay, start, setColor}){
+    function click(){
+        setDay("day5")
+        setColor("#31ffb2")
+    }
     return(
-        <ButtonStyle start={start} onClick={()=>setDay("day5")}></ButtonStyle>
+        <ButtonStyle start={start} onClick={()=>click()}></ButtonStyle>
     )
 }
 
@@ -15,6 +19,6 @@ const ButtonStyle = styled.button`
     bottom: ${props => !props.start ? "50%" : "16.6%"};
         right: ${props => !props.start ? "50%" : "16.6%"};
         transform: ${props => !props.start ? "translate(50%, 50%)" : "translate(0, 70%)"};
-    background-color: aliceblue;
+    background-color: #31ffb2;
     transition: all 1.4s linear;
 `
