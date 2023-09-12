@@ -1,8 +1,12 @@
 import styled from "styled-components"
 
-export default function Button7({setDay, start}){
+export default function Button7({setColor, setDay, start}){
+    function click(){
+        setDay("day7")
+        setColor("aliceblue")
+    }
     return(
-        <ButtonStyle start={start} disabled onClick={()=>setDay("day7")}></ButtonStyle>
+        <ButtonStyle start={start} onClick={()=>click()}></ButtonStyle>
     )
 }
 

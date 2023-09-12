@@ -1,8 +1,12 @@
 import styled from "styled-components"
 
-export default function Button3({setDay, start}){
+export default function Button3({setColor, setDay, start}){
+    function click(){
+        setDay("day3")
+        setColor("green")
+    }
     return(
-        <ButtonStyle start={start} disabled onClick={()=>setDay("day3")}></ButtonStyle>
+        <ButtonStyle start={start} onClick={()=>click()}></ButtonStyle>
     )
 }
 

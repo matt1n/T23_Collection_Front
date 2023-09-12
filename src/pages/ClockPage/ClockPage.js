@@ -16,14 +16,23 @@ import Button12 from "../../components/Buttons/Button12"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import knock from "../../assets/imgs/knocking.png"
+import sísifo from "../../assets/imgs/sísifoO.png"
+import pcorda from "../../assets/imgs/pcorda.png"
+import fantoche from "../../assets/imgs/fantoche.png"
 
 export default function ClockPage() {
     function fday(){
         switch(day){
+            case 'day3':
+                return sísifo
             case 'day5':
                 return knock;
+            case 'day6':
+                return fantoche;
+            case 'day7':
+                return pcorda;
             default:
-                return "";
+                return "";      
     }
         
     }
@@ -44,15 +53,14 @@ export default function ClockPage() {
             <ButtonsContainer start={start}>
                 <MainButton color={color} start={start} onClick={()=> mainButton()}>
                     {day && <img src={fday()}></img>}
-                    {!start && "Aperte para começar"}
                     </MainButton>
                 <Button1 start={start} setDay={setDay}></Button1>
                 <Button2 start={start} setDay={setDay}></Button2>
-                <Button3 start={start} setDay={setDay}></Button3>
+                <Button3 setColor={setColor} start={start} setDay={setDay}></Button3>
                 <Button4 start={start} setDay={setDay}></Button4>
                 <Button5 setColor={setColor} start={start} setDay={setDay}></Button5>
-                <Button6 start={start} setDay={setDay}></Button6>
-                <Button7 start={start} setDay={setDay}></Button7>
+                <Button6 setColor={setColor} start={start} setDay={setDay}></Button6>
+                <Button7 setColor={setColor} start={start} setDay={setDay}></Button7>
                 <Button8 start={start} setDay={setDay}></Button8>
                 <Button9 start={start} setDay={setDay}></Button9>
                 <Button10 start={start} setDay={setDay}></Button10>
