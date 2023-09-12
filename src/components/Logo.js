@@ -1,8 +1,10 @@
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 export default function Logo() {
+    const navigate = useNavigate()
     return (
-    <LogoStyle>Coleção T23
+    <LogoStyle onClick={()=> navigate('/')}>Coleção T23
     </LogoStyle>    
     )
 
@@ -19,4 +21,5 @@ background-color: #ff0b5b;
 color: #fff;
 border: solid 1px black;
 border-radius: 15px 37% 15px;
+cursor: pointer;
 `
