@@ -19,18 +19,36 @@ import knock from "../../assets/imgs/knocking.png"
 import sísifo from "../../assets/imgs/sísifoO.png"
 import pcorda from "../../assets/imgs/pcorda.png"
 import fantoche from "../../assets/imgs/fantoche.png"
+import onibus from "../../assets/imgs/Onibus.png"
+import silencio from "../../assets/imgs/Silence.png"
+import balao from "../../assets/imgs/balaocerto.png"
+import plateia from "../../assets/imgs/plateia.png"
+import polaroid from "../../assets/imgs/polaroid.png"
+import lobo from "../../assets/imgs/wolf.png"
 
 export default function ClockPage() {
     function fday(){
         switch(day){
+            case 'day1':
+                return lobo;
+            case 'day2':
+                return silencio;
             case 'day3':
                 return sísifo
+            case 'day4':
+                return onibus;
             case 'day5':
                 return knock;
             case 'day6':
                 return fantoche;
             case 'day7':
                 return pcorda;
+            case 'day8':
+                return balao;
+            case 'day9':
+                return plateia;
+            case 'day10':
+                return polaroid;
             default:
                 return "";      
     }
@@ -54,26 +72,26 @@ export default function ClockPage() {
                 <MainButton color={color} start={start} onClick={()=> mainButton()}>
                     {day && <img src={fday()}></img>}
                     </MainButton>
-                <Button1 start={start} setDay={setDay}></Button1>
-                <Button2 start={start} setDay={setDay}></Button2>
+                <Button1 setColor={setColor} start={start} setDay={setDay}></Button1>
+                <Button2 setColor={setColor} start={start} setDay={setDay}></Button2>
                 <Button3 setColor={setColor} start={start} setDay={setDay}></Button3>
-                <Button4 start={start} setDay={setDay}></Button4>
+                <Button4 setColor={setColor} start={start} setDay={setDay}></Button4>
                 <Button5 setColor={setColor} start={start} setDay={setDay}></Button5>
                 <Button6 setColor={setColor} start={start} setDay={setDay}></Button6>
                 <Button7 setColor={setColor} start={start} setDay={setDay}></Button7>
-                <Button8 start={start} setDay={setDay}></Button8>
-                <Button9 start={start} setDay={setDay}></Button9>
-                <Button10 start={start} setDay={setDay}></Button10>
-                <Button11 start={start} setDay={setDay}></Button11>
-                <Button12 start={start} setDay={setDay}></Button12>
+                <Button8 setColor={setColor} start={start} setDay={setDay}></Button8>
+                <Button9 setColor={setColor} start={start} setDay={setDay}></Button9>
+                <Button10 setColor={setColor} start={start} setDay={setDay}></Button10>
+                <Button11 setColor={setColor} start={start} setDay={setDay}></Button11>
+                <Button12 setColor={setColor} start={start} setDay={setDay}></Button12>
             </ButtonsContainer>     
         </PageContainer>
     )
 }
 
 const MainButton = styled.button`
-    height: ${props => !props.start ? "8rem" : "10rem"};
-    width: ${props => !props.start ? "8rem" : "10rem"};
+    height: ${props => !props.start===true ? "8rem" : "10rem"};
+    width: ${props => !props.start===true ? "8rem" : "10rem"};
     border-radius: 50%;
     border: solid black 1px;
     z-index: 2;

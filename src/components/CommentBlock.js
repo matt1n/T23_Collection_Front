@@ -8,7 +8,7 @@ export default function CommentBlock({comment, setComment}){
         {comment && <CommentPageContainer onClick={()=> setComment(false)}>
         </CommentPageContainer>}
         <CommentContainer comment={comment} onClick={()=>console.log("a")}>
-        <span>Out of context pq o editor tá sem tempo:</span>
+            <span>Out of context pq o editor tá sem tempo:</span>
             <div>
             <img src={gf}></img>
             <img src={ines}></img>

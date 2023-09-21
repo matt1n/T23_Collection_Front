@@ -3,7 +3,7 @@ import styled from "styled-components"
 export default function Button6({setColor, setDay, start}){
     function click(){
         setDay("day6")
-        setColor("blue")
+        setColor("#00E676")
     }
     return(
         <ButtonStyle start={start} onClick={()=>click()}></ButtonStyle>
@@ -22,6 +22,6 @@ const ButtonStyle = styled.button`
     /* bottom: 0;
     left: 50%;
     transform: translate(-50%, 20%); */
-    background-color: blue;
+    background-color: #00E676;
     transition: all 1.5s linear;
 `

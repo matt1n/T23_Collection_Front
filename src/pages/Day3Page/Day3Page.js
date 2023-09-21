@@ -19,7 +19,6 @@ export default function Day3Page(){
             <Test url={protocolo}/>
             {pdf && <iframe style={{display: "none"}} src={`${process.env.REACT_APP_BACK_END_URL}/downloads/day3`}></iframe>}
             <DownloadButton sim={()=> sim()}></DownloadButton>
-            <EditorComment comment={comment} setComment={setComment}></EditorComment>
             <CommentBlock comment={comment} setComment={setComment}></CommentBlock>
         </PageContainer>
     )
