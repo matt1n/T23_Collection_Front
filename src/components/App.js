@@ -21,7 +21,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<ClockPage/>}/>
+        <Route path="/" element={<HomePage/>}/>
         <Route path="/day1" element={<Day1Page/>}/>
         <Route path="/day2" element={<Day2Page/>}/>
         <Route path="/day3" element={<Day3Page/>}/>
@@ -33,7 +33,7 @@ function App() {
         <Route path="/day9" element={<Day9Page/>}/>
         <Route path="/day10" element={<Day10Page/>}/>
         <Route path="/player" element={<NewHomePage/>}/>
-        <Route path="/protocols" element={<ProtocolsPage/>}/>
+        <Route path="/protocols" element={<ClockPage/>}/>
         <Route path="/presentations" element={<PresentationsPage/>}/>
       </Routes>
     </BrowserRouter>

@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { ThemeContext } from "../contexts/themeContext";
 import { FaSun } from "react-icons/fa";
 import { BsMoonStarsFill } from "react-icons/bs";
+import darkModePersistence from "../services/darkModePersistence";
 
 export default function Header(){
     const navigate = useNavigate();
@@ -12,7 +13,7 @@ export default function Header(){
     return(
         <HeaderStyle darkMode={darkMode}>
             <NewLogo></NewLogo>
-            {darkMode ? <Moon onClick={()=> setDarkMode(!darkMode)}/> : <Sun onClick={()=> setDarkMode(!darkMode)}/>}
+            {darkMode ? <Sun onClick={()=> darkModePersistence(setDarkMode, darkMode)}/> : <Moon onClick={()=> darkModePersistence(setDarkMode, darkMode)}/>}
             <HeaderOptions>
                 <HeaderButton action={"protocolos"} onClick={()=> navigate("/protocols")}>Protocolos de Jogos</HeaderButton>
                 <div style={{width: "9px"}}></div>
@@ -22,19 +23,19 @@ export default function Header(){
     )
 }
 
-const Moon = styled(BsMoonStarsFill)`
+export const Moon = styled(BsMoonStarsFill)`
     position: absolute;
-    right: 50px;
+    right: 15px;
     top: 36px;
-    color: white;
+    color: black;
     font-size: 30px;
 `
 
-const Sun = styled(FaSun)`
+export const Sun = styled(FaSun)`
     position: absolute;
-    right: 50px;
+    right: 15px;
     top: 33px;
-    color: black;
+    color: white;
     font-size: 35px;
 `
 
