@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { PageContainer } from "../../assets/styles/pageStyle"
 import Logo from "../../components/Logo"
 import Button1 from "../../components/Buttons/Button1"
 import Button2 from "../../components/Buttons/Button2"
@@ -13,7 +12,7 @@ import Button9 from "../../components/Buttons/Button9"
 import Button10 from "../../components/Buttons/Button10"
 import Button11 from "../../components/Buttons/Button11"
 import Button12 from "../../components/Buttons/Button12"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import knock from "../../assets/imgs/knocking.png"
 import sísifo from "../../assets/imgs/sísifoO.png"
@@ -25,6 +24,9 @@ import balao from "../../assets/imgs/balaocerto.png"
 import plateia from "../../assets/imgs/plateia.png"
 import polaroid from "../../assets/imgs/polaroid.png"
 import lobo from "../../assets/imgs/wolf.png"
+import Header from "../../components/Header"
+import { PageContainer } from "../../assets/styles/PageContainer"
+import { ThemeContext } from "../../contexts/themeContext"
 
 export default function ClockPage() {
     function fday(){
@@ -65,9 +67,11 @@ export default function ClockPage() {
             navigate(`/${day}`)
         }
     }
+
+    const {darkMode} = useContext(ThemeContext);
     return(
-        <PageContainer>
-            <Logo/>
+        <PageContainer darkMode={darkMode}>
+            <Header></Header>
             <ButtonsContainer start={start}>
                 <MainButton color={color} start={start} onClick={()=> mainButton()}>
                     {day && <img src={fday()}></img>}
@@ -84,7 +88,7 @@ export default function ClockPage() {
                 <Button10 setColor={setColor} start={start} setDay={setDay}></Button10>
                 <Button11 setColor={setColor} start={start} setDay={setDay}></Button11>
                 <Button12 setColor={setColor} start={start} setDay={setDay}></Button12>
-            </ButtonsContainer>     
+            </ButtonsContainer>    
         </PageContainer>
     )
 }
@@ -106,7 +110,7 @@ const MainButton = styled.button`
 `
 const ButtonsContainer = styled.div`
 min-height: 15rem;
-min-width: 15rem;
+width: 15rem;
     position: relative;
     img{
         max-height: 70%;

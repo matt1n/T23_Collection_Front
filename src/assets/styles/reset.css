@@ -67,9 +67,9 @@ button{
 button:disabled{
 	background-color: gray;
 }
-body{
+/*body{
 	background-color: rgba(45, 43, 63, 0.774);
-}
+}*/
 #root {
 	overflow: scroll;
 	height: 100%;

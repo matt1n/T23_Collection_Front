@@ -35,8 +35,7 @@ export default function Test(url) {
   }
   
   return (
-    <>
-    <Sim className="main" style={{maxWidth: "100%", backgroundColor: "#ff0b5b"}}>
+    <Sim className="main" style={{maxWidth: "100%", backgroundColor: "#ea373f"}}>
       <Document
         file={url}
         onLoadSuccess={onDocumentLoadSuccess}
@@ -68,7 +67,6 @@ export default function Test(url) {
         </div>
       </div>
       </Sim>
-    </>
   );
 }
 
@@ -82,7 +80,6 @@ border: solid 1px black;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 10px;
     border: solid 1px black;
     border-bottom: none;
     color: #fff;

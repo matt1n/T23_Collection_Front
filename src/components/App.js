@@ -12,6 +12,10 @@ import Day2Page from "../pages/Day2Page/Day2Page";
 import Day8Page from "../pages/Day8Page/Day8Page";
 import Day9Page from "../pages/Day9Page/Day9Page";
 import Day10Page from "../pages/Day10Page/Day10Page";
+import PlayerPage from "../pages/PlayerPage/PlayerPage";
+import NewHomePage from "../pages/NewHomePage/NewHomePage";
+import ProtocolsPage from "../pages/ProtocolsPage/ProtocolsPage";
+import PresentationsPage from "../pages/PresentationsPage/PresentationsPage";
 
 function App() {
   return (
@@ -28,6 +32,9 @@ function App() {
         <Route path="/day8" element={<Day8Page/>}/>
         <Route path="/day9" element={<Day9Page/>}/>
         <Route path="/day10" element={<Day10Page/>}/>
+        <Route path="/player" element={<NewHomePage/>}/>
+        <Route path="/protocols" element={<ProtocolsPage/>}/>
+        <Route path="/presentations" element={<PresentationsPage/>}/>
       </Routes>
     </BrowserRouter>
   );
