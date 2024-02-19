@@ -20,8 +20,8 @@ export default function PresentationsPage(){
     return(
         <PageContainer darkMode={darkMode}>
             <Header resetChoice={resetChoice}></Header>
-            {!theme && Object.keys(videoList).map(t=> <ListOptionsButton onClick={()=> setTheme(t)}>{t}</ListOptionsButton>)}
-            {(theme && !video) && Object.keys(videoList[theme]).map(t=><ListOptionsButton onClick={()=> setVideo(videoList[theme][t])}>{t}</ListOptionsButton>)}
+            {!theme && Object.keys(videoList).map(t=> <ListOptionsButton darkMode={darkMode} onClick={()=> setTheme(t)}>{t}</ListOptionsButton>)}
+            {(theme && !video) && Object.keys(videoList[theme]).map(t=><ListOptionsButton darkMode={darkMode} onClick={()=> setVideo(videoList[theme][t])}>{t}</ListOptionsButton>)}
             <ReactPlayer width={"80%"} height={window.innerWidth<768 ? "300px" : undefined} controls={true} url={video}></ReactPlayer>
             {(theme && video) && <VideoSelect onClick={()=> resetChoice()}><IoMenu/></VideoSelect>}
         </PageContainer>
@@ -33,9 +33,9 @@ const ListOptionsButton = styled.button`
     width: 320px;
     margin-bottom: 1em;
     border-radius: 7px;
-    background-color: ${props => props.darkMode ? "transparent" : "#393738"};
-    border: ${props=> props.darkMode ? "1px solid #ffffff" : "none"};
-    color: #ffffff;
+    background-color: ${props => props.darkMode ? "transparent" : "#ea373f"};
+    border: ${props=> props.darkMode ? "1px solid #ea373f" : "none"};
+    color: #fff;
     font-size: 25px;
     font-weight: 700;
 `
