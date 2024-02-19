@@ -8,7 +8,7 @@ import EditorComment from "../../components/EditorComment";
 import CommentBlock from "../../components/CommentBlock";
 import Header from "../../components/Header";
 import { PageContainer } from "../../assets/styles/PageContainer";
-import { ThemeContext } from "styled-components";
+import { ThemeContext } from "../../contexts/themeContext";
 
 export default function Day4Page(){
     const [pdf, setPdf] = useState(false)
