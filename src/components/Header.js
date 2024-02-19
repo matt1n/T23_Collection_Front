@@ -1,13 +1,14 @@
 import styled from "styled-components"
 import NewLogo from "./NewLogo"
-import { useNavigate } from "react-router-dom"
+import { useHref, useNavigate } from "react-router-dom"
 import { useContext } from "react";
 import { ThemeContext } from "../contexts/themeContext";
 import { FaSun } from "react-icons/fa";
 import { BsMoonStarsFill } from "react-icons/bs";
 import darkModePersistence from "../services/darkModePersistence";
 
-export default function Header(){
+export default function Header({resetChoice}){
+    const href = useHref()
     const navigate = useNavigate();
     const {setDarkMode, darkMode} = useContext(ThemeContext);
     return(
@@ -17,7 +18,7 @@ export default function Header(){
             <HeaderOptions>
                 <HeaderButton action={"protocolos"} onClick={()=> navigate("/protocols")}>Protocolos de Jogos</HeaderButton>
                 <div style={{width: "9px"}}></div>
-                <HeaderButton action={"apresentações"} onClick={()=> navigate("/presentations")}>Apresentações</HeaderButton>
+                <HeaderButton action={"apresentações"} onClick={href!=="/presentations" ? ()=> navigate("/presentations") : ()=> resetChoice()}>Apresentações</HeaderButton>
             </HeaderOptions>
         </HeaderStyle>
     )
