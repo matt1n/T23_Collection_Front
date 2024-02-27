@@ -12,7 +12,7 @@ export const videoList = {
     },
     "Monólogo do Objeto": {
         Alice: "https://youtu.be/I9w--hv72P4",
-        Danilo: "https://youtu.be/hJIkNBvf84U",
+        Danilo: "https://youtu.be/nQSMfmVjt9I",
         Giovanni: "https://youtu.be/hJIkNBvf84U",
         Giulia: "https://youtu.be/As8GJr8nmC8",
         Isa: "https://youtu.be/krPcdBs9fHc",
